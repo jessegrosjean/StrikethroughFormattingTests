@@ -8,18 +8,21 @@ class MyView: NSView {
         
         let a1 = NSMutableDictionary()
         a1[NSAttributedString.Key.strikethroughStyle.rawValue] = NSNumber(value: CTUnderlineStyle.thick.rawValue)
-        drawStringA(name: 1, at: .init(x: 0, y: 0), attributes: a1 as CFDictionary, out: &out)
-        drawStringB(name: 1, at: .init(x: 0, y: 11), attributes: a1 as CFDictionary, out: &out)
+        a1[NSAttributedString.Key.underlineStyle.rawValue] = NSNumber(value: CTUnderlineStyle.thick.rawValue)
+        drawStringA(name: 1, at: .init(x: 0, y: 5), attributes: a1 as CFDictionary, out: &out)
+        drawStringB(name: 1, at: .init(x: 0, y: 22), attributes: a1 as CFDictionary, out: &out)
 
         let a2 = NSMutableDictionary()
         a2[NSAttributedString.Key.strikethroughStyle.rawValue] = CTUnderlineStyle.thick.rawValue
-        drawStringA(name: 2, at: .init(x: 0, y: 22), attributes: a2 as CFDictionary, out: &out)
-        drawStringB(name: 2, at: .init(x: 0, y: 33), attributes: a2 as CFDictionary, out: &out)
+        a2[NSAttributedString.Key.underlineStyle.rawValue] = CTUnderlineStyle.thick.rawValue
+        drawStringA(name: 2, at: .init(x: 0, y: 44), attributes: a2 as CFDictionary, out: &out)
+        drawStringB(name: 2, at: .init(x: 0, y: 66), attributes: a2 as CFDictionary, out: &out)
 
         let a3 = NSMutableDictionary()
+        a3[NSAttributedString.Key.underlineStyle.rawValue] = Int(CTUnderlineStyle.thick.rawValue)
         a3[NSAttributedString.Key.strikethroughStyle.rawValue] = Int(CTUnderlineStyle.thick.rawValue)
-        drawStringA(name: 3, at: .init(x: 0, y: 44), attributes: a3 as CFDictionary, out: &out)
-        drawStringB(name: 3, at: .init(x: 0, y: 55), attributes: a3 as CFDictionary, out: &out)
+        drawStringA(name: 3, at: .init(x: 0, y: 88), attributes: a3 as CFDictionary, out: &out)
+        drawStringB(name: 3, at: .init(x: 0, y: 110), attributes: a3 as CFDictionary, out: &out)
         
         if let storage = ((subviews.first as? NSScrollView)?.documentView as? NSTextView)?.textStorage {
             storage.beginEditing()
